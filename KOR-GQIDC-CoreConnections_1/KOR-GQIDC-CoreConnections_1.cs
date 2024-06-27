@@ -186,14 +186,22 @@ namespace ConnectionTableDataSource_1
 
         public List<string> GetInterfacesFromPlatformEndpoint(string platformEndpoint)
         {
-            Dictionary<string, List<int>> platformDictionary = JsonConvert.DeserializeObject<Dictionary<string, List<int>>>(platformEndpoint);
-
-            if (!platformDictionary.ContainsKey("Core"))
+            try
             {
+                Dictionary<string, List<int>> platformDictionary = JsonConvert.DeserializeObject<Dictionary<string, List<int>>>(platformEndpoint);
+
+                if (!platformDictionary.ContainsKey("Core"))
+                {
+                    return new List<string>();
+                }
+
+                return platformDictionary["Core"].Select(id => id.ToString()).ToList();
+            }
+            catch (Exception)
+            {
+                _debugLogging.AppendLine("UNABLE TO READ CORE INTERFACES");
                 return new List<string>();
             }
-
-            return platformDictionary["Core"].Select(id => id.ToString()).ToList();
         }
 
         public GQIRow[] GetFilteredConnectionTableRows(List<string> connectionInterfaceFilter)
@@ -251,7 +259,8 @@ namespace ConnectionTableDataSource_1
                 string srcKeaInterfaceId = Convert.ToString(((object[])srcKeaInterfaceIdColumn[i])[0]);
                 string dstKeaInterfaceId = Convert.ToString(((object[])dstKeaInterfaceIdColumn[i])[0]);
 
-                if (!connectionInterfaceFilter.Any() || (!connectionInterfaceFilter.Contains(srcKeaInterfaceId) && !connectionInterfaceFilter.Contains(dstKeaInterfaceId)))
+                // if filter is empty, show full table
+                if (connectionInterfaceFilter.Any() && (!connectionInterfaceFilter.Contains(srcKeaInterfaceId) && !connectionInterfaceFilter.Contains(dstKeaInterfaceId)))
                 {
                     _debugLogging.AppendLine("FILTER DOES NOT CONTAIN " + srcKeaInterfaceId + " OR " + dstKeaInterfaceId);
                     continue;

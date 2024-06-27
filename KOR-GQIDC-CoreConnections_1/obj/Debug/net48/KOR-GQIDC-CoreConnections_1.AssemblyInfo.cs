@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("© Skyline Communications")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0cd9a47de12cdbe8ae2bd774f1dbdb7547e2d5e1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c1a5762d9a3a49fa5be95372b0be09a6d3c9d66")]
 [assembly: System.Reflection.AssemblyProductAttribute("KOR-GQIDC-CoreConnections_1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KOR-GQIDC-CoreConnections_1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
