@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <DMSScript options="272" xmlns="http://www.skyline.be/automation">
-	<Name>KOR-GQIDC-CoreConnections</Name>
-	<Description></Description>
+	<Name>KOR-GQIDS-CoreConnections</Name>
+	<Description>KOR-GQIDS-CoreConnections_1.0.0.1</Description>
 	<Type>Automation</Type>
 	<Author>SKYLINE2\RSP</Author>
 	<CheckSets>FALSE</CheckSets>
@@ -18,7 +18,7 @@
 
 	<Script>
 		<Exe id="1" type="csharp">
-			<Value><![CDATA[[Project:KOR-GQIDC-CoreConnections_1]]]></Value>
+			<Value><![CDATA[[Project:KOR-GQIDS-CoreConnections_1]]]></Value>
 			<!--<Param type="debug">true</Param>-->
 			<Param type="preCompile">true</Param>
 			<Param type="libraryName">CoreConnections</Param>

@@ -37,14 +37,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Analysis", "Code Analy
 		Internal\Code Analysis\stylecop.json = Internal\Code Analysis\stylecop.json
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KOR-GQIDC-CoreConnections", "KOR-GQIDC-CoreConnections", "{0135C5BE-09A0-4426-B26E-0542DAB25CAE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KOR-GQIDS-CoreConnections", "KOR-GQIDS-CoreConnections", "{0135C5BE-09A0-4426-B26E-0542DAB25CAE}"
 	ProjectSection(SolutionItems) = preProject
-		KOR-GQIDC-CoreConnections.xml = KOR-GQIDC-CoreConnections.xml
+		KOR-GQIDS-CoreConnections.xml = KOR-GQIDS-CoreConnections.xml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Actions", "Actions", "{36C82828-1A8C-4F99-BF41-325DDEBC9931}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KOR-GQIDC-CoreConnections_1", "KOR-GQIDC-CoreConnections_1\KOR-GQIDC-CoreConnections_1.csproj", "{40C52FD1-4B72-48C7-A71C-C9CCD01B2F9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KOR-GQIDS-CoreConnections_1", "KOR-GQIDS-CoreConnections_1\KOR-GQIDS-CoreConnections_1.csproj", "{40C52FD1-4B72-48C7-A71C-C9CCD01B2F9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

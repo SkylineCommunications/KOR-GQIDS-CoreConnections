@@ -22,7 +22,7 @@
 	</ItemGroup>
 	<ProjectExtensions>
 		<VisualStudio>
-			<UserProperties DisLinkedXmlFile="..\KOR-GQIDC-CoreConnections.xml" DisProjectType="automationScriptProject" DisLinkId="1" />
+			<UserProperties DisLinkedXmlFile="..\KOR-GQIDS-CoreConnections.xml" DisProjectType="automationScriptProject" DisLinkId="1" />
 		</VisualStudio>
 	</ProjectExtensions>
 </Project>

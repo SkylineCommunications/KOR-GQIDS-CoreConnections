@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\GIT\\KOR CoreConnections Data Source\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{40C52FD1-4B72-48C7-A71C-C9CCD01B2F9B}|KOR-GQIDC-CoreConnections_1\\KOR-GQIDC-CoreConnections_1.csproj|c:\\git\\kor coreconnections data source\\kor-gqidc-coreconnections_1\\kor-gqidc-coreconnections_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40C52FD1-4B72-48C7-A71C-C9CCD01B2F9B}|KOR-GQIDC-CoreConnections_1\\KOR-GQIDC-CoreConnections_1.csproj|solutionrelative:kor-gqidc-coreconnections_1\\kor-gqidc-coreconnections_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{40C52FD1-4B72-48C7-A71C-C9CCD01B2F9B}|KOR-GQIDS-CoreConnections_1\\KOR-GQIDS-CoreConnections_1.csproj|c:\\git\\kor coreconnections data source\\kor-gqids-coreconnections_1\\kor-gqids-coreconnections_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40C52FD1-4B72-48C7-A71C-C9CCD01B2F9B}|KOR-GQIDS-CoreConnections_1\\KOR-GQIDS-CoreConnections_1.csproj|solutionrelative:kor-gqids-coreconnections_1\\kor-gqids-coreconnections_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0135C5BE-09A0-4426-B26E-0542DAB25CAE}|KOR-GQIDC-CoreConnections{0135C5BE-09A0-4426-B26E-0542DAB25CAE}|C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDC-CoreConnections.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{0135C5BE-09A0-4426-B26E-0542DAB25CAE}|KOR-GQIDC-CoreConnections{0135C5BE-09A0-4426-B26E-0542DAB25CAE}|solutionrelative:KOR-GQIDC-CoreConnections.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{0135C5BE-09A0-4426-B26E-0542DAB25CAE}|KOR-GQIDS-CoreConnections{0135C5BE-09A0-4426-B26E-0542DAB25CAE}|C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDS-CoreConnections.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{0135C5BE-09A0-4426-B26E-0542DAB25CAE}|KOR-GQIDS-CoreConnections{0135C5BE-09A0-4426-B26E-0542DAB25CAE}|solutionrelative:KOR-GQIDS-CoreConnections.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,27 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "KOR-GQIDC-CoreConnections_1.cs",
-              "DocumentMoniker": "C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDC-CoreConnections_1\\KOR-GQIDC-CoreConnections_1.cs",
-              "RelativeDocumentMoniker": "KOR-GQIDC-CoreConnections_1\\KOR-GQIDC-CoreConnections_1.cs",
-              "ToolTip": "C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDC-CoreConnections_1\\KOR-GQIDC-CoreConnections_1.cs",
-              "RelativeToolTip": "KOR-GQIDC-CoreConnections_1\\KOR-GQIDC-CoreConnections_1.cs",
-              "ViewState": "AQIAAO0AAAAAAAAAAADgv/8AAAAAAAAA",
+              "Title": "KOR-GQIDS-CoreConnections_1.cs",
+              "DocumentMoniker": "C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDS-CoreConnections_1\\KOR-GQIDS-CoreConnections_1.cs",
+              "RelativeDocumentMoniker": "KOR-GQIDS-CoreConnections_1\\KOR-GQIDS-CoreConnections_1.cs",
+              "ToolTip": "C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDS-CoreConnections_1\\KOR-GQIDS-CoreConnections_1.cs",
+              "RelativeToolTip": "KOR-GQIDS-CoreConnections_1\\KOR-GQIDS-CoreConnections_1.cs",
+              "ViewState": "AQIAAOEAAAAAAAAAAAAvwPgAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T12:27:09.63Z",
+              "WhenOpened": "2024-06-28T08:56:24.759Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "KOR-GQIDC-CoreConnections.xml",
-              "DocumentMoniker": "C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDC-CoreConnections.xml",
-              "RelativeDocumentMoniker": "KOR-GQIDC-CoreConnections.xml",
-              "ToolTip": "C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDC-CoreConnections.xml",
-              "RelativeToolTip": "KOR-GQIDC-CoreConnections.xml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAcAAAA",
+              "Title": "KOR-GQIDS-CoreConnections.xml",
+              "DocumentMoniker": "C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDS-CoreConnections.xml",
+              "RelativeDocumentMoniker": "KOR-GQIDS-CoreConnections.xml",
+              "ToolTip": "C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDS-CoreConnections.xml",
+              "RelativeToolTip": "KOR-GQIDS-CoreConnections.xml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2024-06-26T12:27:03.993Z",
+              "WhenOpened": "2024-06-28T07:43:48.791Z",
               "EditorCaption": ""
             }
           ]

@@ -386,11 +386,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDC-CoreConnections_1\\KOR-GQIDC-CoreConnections_1.csproj",
-      "projectName": "KOR-GQIDC-CoreConnections_1",
-      "projectPath": "C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDC-CoreConnections_1\\KOR-GQIDC-CoreConnections_1.csproj",
+      "projectUniqueName": "C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDS-CoreConnections_1\\KOR-GQIDS-CoreConnections_1.csproj",
+      "projectName": "KOR-GQIDS-CoreConnections_1",
+      "projectPath": "C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDS-CoreConnections_1\\KOR-GQIDS-CoreConnections_1.csproj",
       "packagesPath": "C:\\Users\\RobinSP\\.nuget\\packages\\",
-      "outputPath": "C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDC-CoreConnections_1\\obj\\",
+      "outputPath": "C:\\GIT\\KOR CoreConnections Data Source\\KOR-GQIDS-CoreConnections_1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

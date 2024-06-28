@@ -60,7 +60,7 @@ namespace ConnectionTableDataSource_1
     using Skyline.DataMiner.Analytics.GenericInterface;
     using Skyline.DataMiner.Net.Messages;
 
-    [GQIMetaData(Name = "Core Connections")]
+    [GQIMetaData(Name = "CoreConnections")]
     public class ConnectionTable : IGQIDataSource, IGQIOnInit
     {
         private GQIDMS _dms;
@@ -70,26 +70,31 @@ namespace ConnectionTableDataSource_1
         {
             try
             {
-                _debugLogging.AppendLine("GET COLUMNS");
-
                 return new GQIColumn[]
                 {
+                    new GQIStringColumn("Instance"),
+                    new GQIStringColumn("Source KEA Element ID"),
+                    new GQIStringColumn("Source KEA Interface ID"),
+                    new GQIStringColumn("Destination KEA Element ID"),
+                    new GQIStringColumn("Destination KEA Interface ID"),
+                    new GQIStringColumn("Source DMS Element ID"),
                     new GQIStringColumn("Source DMS Element Name"),
                     new GQIStringColumn("Source DMS Element Protocol"),
                     new GQIStringColumn("Source KEA Element Location ID"),
                     new GQIStringColumn("Source KEA Element Location Name"),
+                    new GQIStringColumn("Source DMS DCF Interface ID"),
                     new GQIStringColumn("Source DMS DCF Interface Name"),
+                    new GQIStringColumn("Source DMS DCF Interface Table ID"),
+                    new GQIStringColumn("Source DMS DCF Interface Table Index"),
+                    new GQIStringColumn("Destination DMS Element ID"),
                     new GQIStringColumn("Destination DMS Element Name"),
                     new GQIStringColumn("Destination DMS Element Protocol"),
                     new GQIStringColumn("Destination KEA Element Location ID"),
                     new GQIStringColumn("Destination KEA Element Location Name"),
-                    new GQIStringColumn("Destination DMS DCF Interface Name"),
-                    new GQIStringColumn("Source DMS DCF Interface Table Index"),
-                    new GQIStringColumn("Source DMS Element ID"),
-                    new GQIStringColumn("Source DMS DCF Interface ID"),
                     new GQIStringColumn("Destination DMS DCF Interface ID"),
-                    new GQIStringColumn("Source KEA Interface ID"),
-                    new GQIStringColumn("Destination KEA Interface ID"),
+                    new GQIStringColumn("Destination DMS DCF Interface Name"),
+                    new GQIStringColumn("Destination DMS DCF Interface Table ID"),
+                    new GQIStringColumn("Destination DMS DCF Interface Table Index"),
                 };
             }
             catch (Exception e)
@@ -104,11 +109,12 @@ namespace ConnectionTableDataSource_1
         {
             try
             {
-                _debugLogging.AppendLine("START|");
                 string platformEndpointString = GetPlatformEndpointString();
-                _debugLogging.AppendLine("platformEndpointString|" + platformEndpointString);
-                List<string> interfacesInPlatformEndpoint = GetInterfacesFromPlatformEndpoint(platformEndpointString);
-                _debugLogging.AppendLine("interfacesInPlatformEndpoint|" + String.Join(", ", interfacesInPlatformEndpoint));
+
+                List<string> interfacesInPlatformEndpoint = GetInterfacesFromCorePlatform(platformEndpointString);
+
+                _debugLogging.AppendLine("INTERFACES IN CORE PLATFORM|" + String.Join(", ", interfacesInPlatformEndpoint));
+
                 GQIPage page = new GQIPage(GetFilteredConnectionTableRows(interfacesInPlatformEndpoint));
                 WriteToDebug(_debugLogging.ToString());
                 return page;
@@ -125,7 +131,9 @@ namespace ConnectionTableDataSource_1
 
         public void WriteToDebug(string text)
         {
-            using (StreamWriter sw = new StreamWriter(@"C:\Skyline_Data\Debug\Debug.txt"))
+            Directory.CreateDirectory(@"C:\Skyline_Data\AutomationScriptDebug");
+
+            using (StreamWriter sw = new StreamWriter(@"C:\Skyline_Data\AutomationScriptDebug\Debug_CoreConnections.txt"))
             {
                 sw.WriteLine(text);
             }
@@ -137,7 +145,6 @@ namespace ConnectionTableDataSource_1
             {
                 _debugLogging = new StringBuilder();
                 _dms = args.DMS;
-                _debugLogging.AppendLine("INIT DONE");
             }
             catch (Exception e)
             {
@@ -149,12 +156,12 @@ namespace ConnectionTableDataSource_1
 
         public string GetPlatformEndpointString()
         {
-            GetElementByNameMessage getElementByNameRequest = new GetElementByNameMessage("Kordia NPC Manager - Platform");
+            GetElementByNameMessage getElementByNameRequest = new GetElementByNameMessage("Kordia NPC Interface");
             IEnumerable<ElementInfoEventMessage> getElementByNameResponse = _dms.SendMessages(getElementByNameRequest).OfType<ElementInfoEventMessage>();
 
             if (!getElementByNameResponse.Any())
             {
-                _debugLogging.AppendLine("PLATFORM MANAGER NOT FOUND");
+                _debugLogging.AppendLine("KORDIA NPC INTERFACE NOT FOUND");
                 return null;
             }
 
@@ -168,7 +175,7 @@ namespace ConnectionTableDataSource_1
             {
                 DataMinerID = platformNpcManager.DataMinerID,
                 ElId = platformNpcManager.ElementID,
-                ParameterId = 21,
+                ParameterId = 145,
             };
 
             IEnumerable<GetParameterResponseMessage> getParameterResponse = _dms.SendMessages(getParameterRequest).OfType<GetParameterResponseMessage>();
@@ -184,7 +191,7 @@ namespace ConnectionTableDataSource_1
             return paramValue.ValueType == ParameterValueType.String ? paramValue.StringValue : null;
         }
 
-        public List<string> GetInterfacesFromPlatformEndpoint(string platformEndpoint)
+        public List<string> GetInterfacesFromCorePlatform(string platformEndpoint)
         {
             try
             {
@@ -226,7 +233,7 @@ namespace ConnectionTableDataSource_1
 
             if (connectionTableObject.Length != 23)
             {
-                _debugLogging.AppendLine("CONNECTION TABLE COLUMN COUND IS NOT 23");
+                _debugLogging.AppendLine("CONNECTION TABLE COLUMN COUNT IS NOT 23");
                 return null;
             }
 
@@ -272,22 +279,29 @@ namespace ConnectionTableDataSource_1
                     new GQIRow(
                         new[]
                         {
+                            new GQICell { Value = ((object[])instanceColumn[i])[0] },
+                            new GQICell { Value = ((object[])srcKeaElementIdColumn[i])[0] },
+                            new GQICell { Value = srcKeaInterfaceId },
+                            new GQICell { Value = ((object[])dstKeaElementIdColumn[i])[0] },
+                            new GQICell { Value = dstKeaInterfaceId },
+                            new GQICell { Value = ((object[])srcDmsElementIdColumn[i])[0] },
                             new GQICell { Value = ((object[])srcDmsElementNameColumn[i])[0] },
                             new GQICell { Value = ((object[])srcDmsElementProtocolColumn[i])[0] },
                             new GQICell { Value = ((object[])srcKeaElementLocationIdColumn[i])[0] },
                             new GQICell { Value = ((object[])srcKeaElementLocationNameColumn[i])[0] },
+                            new GQICell { Value = ((object[])srcDmsDcfInterfaceIdColumn[i])[0] },
                             new GQICell { Value = ((object[])srcDmsDcfInterfaceNameColumn[i])[0] },
+                            new GQICell { Value = ((object[])srcDmsDcfInterfaceTableIdColumn[i])[0] },
+                            new GQICell { Value = ((object[])srcDmsDcfInterfaceTableIndexColumn[i])[0] },
+                            new GQICell { Value = ((object[])dstDmsElementIdColumn[i])[0] },
                             new GQICell { Value = ((object[])dstDmsElementNameColumn[i])[0] },
                             new GQICell { Value = ((object[])dstDmsElementProtocolColumn[i])[0] },
                             new GQICell { Value = ((object[])dstKeaElementLocationIdColumn[i])[0] },
                             new GQICell { Value = ((object[])dstKeaElementLocationNameColumn[i])[0] },
-                            new GQICell { Value = ((object[])dstDmsDcfInterfaceNameColumn[i])[0] },
-                            new GQICell { Value = ((object[])srcDmsDcfInterfaceTableIndexColumn[i])[0] },
-                            new GQICell { Value = ((object[])srcDmsElementIdColumn[i])[0] },
-                            new GQICell { Value = ((object[])srcDmsDcfInterfaceIdColumn[i])[0] },
                             new GQICell { Value = ((object[])dstDmsDcfInterfaceIdColumn[i])[0] },
-                            new GQICell { Value = srcKeaInterfaceId },
-                            new GQICell { Value = dstKeaInterfaceId },
+                            new GQICell { Value = ((object[])dstDmsDcfInterfaceNameColumn[i])[0] },
+                            new GQICell { Value = ((object[])dstDmsDcfInterfaceTableIdColumn[i])[0] },
+                            new GQICell { Value = ((object[])dstDmsDcfInterfaceTableIndexColumn[i])[0] },
                         }));
             }
 
